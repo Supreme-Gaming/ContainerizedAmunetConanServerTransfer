@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  httpd:
+    image: ghcr.io/supreme-gaming/amunet-server-transfer:1.0.0
+    container_name: conan_server_transfer
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - config:/var/www/html
+
+volumes:
+  config:
+    driver: local
